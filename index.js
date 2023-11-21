@@ -65,7 +65,6 @@ function btnDraw(){
 }
 btnDraw()
 const tableElement = document.getElementById("table");
-
 function tableDraw() {
      tableElement.style.display = "grid";
      tableElement.style.width = '200px';
@@ -126,12 +125,9 @@ function click(element, color) {
     const colorToMatch = activeTile.getAttribute("data-color");
     if (colorToMatch === color) {
         setTimeout(() => {
+            anamtionController.zoomOut(element,activeTile)
             element.setAttribute("data-revealed", "true");
             activeTile.setAttribute("data-revealed", "true");
-            /*            element.style.background = "#333333";
-                        activeTile.style.background = "#333333";*/
-            element.remove();
-            activeTile.remove()
             coins += 1000;
             coinsElement.innerHTML = `coins: ${coins}`
             activeTile = null;

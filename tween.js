@@ -11,23 +11,36 @@ export class Tween {
                 oj.style.background = `${color}`,
         });
     }
+    zoomOut(oj1, oj2) {
+        const duration = 1;
+        gsap.to(oj1, {
+            scaleX: 1.2, scaleY: 1.2, duration,
+            onComplete: () =>
+                (oj1.remove())
+        });
+        gsap.to(oj2, {
+            scaleX: 1.2, scaleY: 1.2, duration,
+            onComplete: () =>
+                (oj2.remove())
+        });
+    }
 
     dealerCard(positionTop, positionLeft, cardArr) {
         let top = [...positionTop]
         console.log(top)
         //let value;
         let left = [...positionLeft]
-        TweenMax.staggerTo('.tile',1, {
+        TweenMax.staggerTo('.tile', 1, {
             rotation: 360,
             x: function (idx) {
                 for (idx; idx < top.length; idx++)
-                   //let value = top[idx] - 100
-                    return top[idx]- 200
+                    //let value = top[idx] - 100
+                    return top[idx] - 200
             },
             y: function (idy) {
                 for (idy; idy < left.length; idy++)
-                    return left[idy]-300;
+                    return left[idy] - 300;
             }
-        },0.1);
+        }, 0.1);
     }
 }
