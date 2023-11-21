@@ -25,7 +25,7 @@ function drawStyleContainer() {
     //styleContainer.style.position = "static";
     styleContainer.style.margin = '10px auto';
     styleContainer.style.width = 'max-content'
-    styleContainer.style.height = '700px'
+    styleContainer.style.height = '650px'
     styleContainer.style.display = 'grid';
     styleContainer.style.gap = '16px';
     styleContainer.style.boxSizing = 'border-box';
@@ -50,9 +50,30 @@ function coinDraw() {
     coinsElement.style.alignContent = 'center'
     coinsElement.style.justifyContent = 'center'
     coinsElement.style.display = 'grid'
-    console.log(coins);
 }
 coinDraw()
+function btnDraw(){
+    const btnElement = document.getElementById('button');
+    btnElement.style.background = '#ffffff';
+    btnElement.style.borderRadius = '8px';
+    btnElement.style.borderWidth = '0px';
+    btnElement.style.color = '#d53333';
+    btnElement.style.fontSize = '14px';
+    btnElement.style.fontWeight = '500';
+    btnElement.style.fontFamily = '"Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif';
+}
+btnDraw()
+function tableDraw() {
+    const tableElement = document.getElementById('table');
+     tableElement.style.display = "grid";
+     tableElement.style.width = '200px';
+     tableElement.style.height ='100px'
+     tableElement.style.gridTemplateAreas = "a1 b1"
+     tableElement.style.gridGap = "2px"
+     tableElement.style.textAlign = "center"
+    tableElement.style.margin = "auto"
+}
+tableDraw()
 let isUpdating = new Array(20).fill(false);
 let duration = 0.2;
 let timer = 0;
