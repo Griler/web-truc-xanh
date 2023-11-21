@@ -132,7 +132,7 @@ function click(element, color) {
             coinsElement.innerHTML = `coins: ${coins}`
             activeTile = null;
             awaitingEndOfMove = false;
-            revealedCount +=win;
+            revealedCount +=2;
         }, 1000);
         return;
     }
