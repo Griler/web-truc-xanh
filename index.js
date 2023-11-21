@@ -25,7 +25,7 @@ function drawStyleContainer() {
     //styleContainer.style.position = "static";
     styleContainer.style.margin = '10px auto';
     styleContainer.style.width = 'max-content'
-    styleContainer.style.height = '700px'
+    styleContainer.style.height = '650px'
     styleContainer.style.display = 'grid';
     styleContainer.style.gap = '16px';
     styleContainer.style.boxSizing = 'border-box';
@@ -96,14 +96,14 @@ function buildTile(color, idx) {
     return element;
 }
 
-let i = 1;
+let i = 0;
 
 function buildGrid() {
-    for (i; i < tileCount + 1; i++) {
-        const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
-        const color = colorsPicklist[randomIndex];
+    for (i; i < tileCount; i++) {
+        //const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
+        const color = colorsPicklist[i];
         const tile = buildTile(color, i);
-        colorsPicklist.splice(randomIndex, 1);
+       // colorsPicklist.splice(randomIndex, 1);
         tilesContainer.appendChild(tile);
     }
 }

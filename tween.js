@@ -35,11 +35,11 @@ export class Tween {
             x: function (idx) {
                 for (idx; idx < top.length; idx++)
                     //let value = top[idx] - 100
-                    return top[idx] - 200
+                    return 350- left[idx]
             },
             y: function (idy) {
                 for (idy; idy < left.length; idy++)
-                    return left[idy] - 300;
+                    return 250 - top[idy] ;
             }
         }, 0.1);
     }
