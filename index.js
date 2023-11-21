@@ -99,7 +99,7 @@ function buildTile(color, idx) {
 let i = 0;
 
 function buildGrid() {
-    for (i; i < tileCount; i++) {
+    for (i; i < tileCount ; i++) {
         //const randomIndex = Math.floor(Math.random() * colorsPicklist.length);
         const color = colorsPicklist[i];
         const tile = buildTile(color, i);
