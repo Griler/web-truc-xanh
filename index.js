@@ -25,7 +25,7 @@ function drawStyleContainer() {
     //styleContainer.style.position = "static";
     styleContainer.style.margin = '10px auto';
     styleContainer.style.width = 'max-content'
-    styleContainer.style.height = '650px'
+    styleContainer.style.height = '700px'
     styleContainer.style.display = 'grid';
     styleContainer.style.gap = '16px';
     styleContainer.style.boxSizing = 'border-box';
@@ -53,7 +53,7 @@ function coinDraw() {
 }
 coinDraw()
 function btnDraw(){
-    const btnElement = document.getElementById('button');
+    const btnElement = document.getElementById("button");
     btnElement.style.background = '#ffffff';
     btnElement.style.borderRadius = '8px';
     btnElement.style.borderWidth = '0px';
@@ -61,10 +61,12 @@ function btnDraw(){
     btnElement.style.fontSize = '14px';
     btnElement.style.fontWeight = '500';
     btnElement.style.fontFamily = '"Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif';
+    //tableElement.appendChild(btnElement)
 }
 btnDraw()
+const tableElement = document.getElementById("table");
+
 function tableDraw() {
-    const tableElement = document.getElementById('table');
      tableElement.style.display = "grid";
      tableElement.style.width = '200px';
      tableElement.style.height ='100px'
