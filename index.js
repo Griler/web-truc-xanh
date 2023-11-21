@@ -107,7 +107,7 @@ function buildGrid() {
         tilesContainer.appendChild(tile);
     }
 }
-
+var check=0;
 function click(element, color) {
     anamtionController.flip(element, color, duration);
     const revealed = element.getAttribute("data-revealed");
@@ -132,12 +132,8 @@ function click(element, color) {
             coinsElement.innerHTML = `coins: ${coins}`
             activeTile = null;
             awaitingEndOfMove = false;
-            revealedCount += 2;
+            revealedCount +=win;
         }, 1000);
-        if (revealedCount === tileCount) {
-            alert("You win! Refresh to start again.");
-            window.location.reload()
-        }
         return;
     }
     awaitingEndOfMove = true;
@@ -200,4 +196,14 @@ function update(dt) {
     btnRs.onclick = function () {
         resetButton()
     };
+    winGame()
+}
+console.log(revealedCount)
+
+function winGame() {
+    if (revealedCount === 20) {
+        alert("You win! Refresh to start again.");
+        revealedCount=0;
+        window.location.reload()
+    }
 }
