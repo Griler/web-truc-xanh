@@ -9,7 +9,7 @@ const img = ["./asset/Ahri.png", "./asset/Akali.png",
     "./asset/Kayn.png", "./asset/Lux.png", "./asset/Sona.png", "./asset/Viego.png", "./asset/Yasuo.png"];
 const imgPicklist = [...img, ...img];
 const tileCount = imgPicklist.length;
-let coins = 500;
+let coins = 10000;
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
