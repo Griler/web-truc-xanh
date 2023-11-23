@@ -39,24 +39,17 @@ export class Node { // entity
 
     _createElement() {
         let tile = document.createElement("div");
-        tile.style.position = "fixed"
-        tile.style.width = "100px";
-        tile.style.height = "100px";
-        tile.style.background = "url(./imgCard.png)";
-        tile.style.backgroundSize = "cover"
-        tile.style.cursor = "pointer"
-        tile.style.border = "2px solid #444444"
-        tile.style.top ='250px'
-        tile.style.left = '700px'
         return tile;
     }
 
-    addChild(node) {
-        // todo
+    addChild(entity) {
+        entity.parent = this;
+        this.children.push(entity);
+        this.elm.appendChild(entity);
     }
 
     removeChild(node) {
         // todo
     }
-
 }
+export default Node

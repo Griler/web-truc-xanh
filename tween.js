@@ -3,15 +3,21 @@ export class Tween {
         const duration = dr;
         gsap.to(oj, {
             scaleX: 0, duration,
-            onComplete: () =>
-                oj.style.background = `${color}`,
+            onComplete: () => {
+                oj.style.background = `url(${color})`;
+                oj.style.backgroundSize = "cover";
+            }
         });
         gsap.to(oj, {
-            scaleX: 1, delay: duration, onComplete: () =>
-                oj.style.background = `${color}`,
+            scaleX: 1, delay: duration,
+            onComplete: () => {
+                oj.style.background = `url(${color})`;
+                oj.style.backgroundSize = "cover";
+            }
         });
     }
-    zoomOut(oj1, oj2) {
+
+    zoomOut(oj1, oj2, dr) {
         const duration = 1;
         gsap.to(oj1, {
             scaleX: 1.2, scaleY: 1.2, duration,
@@ -24,23 +30,37 @@ export class Tween {
                 (oj2.remove())
         });
     }
-
-    dealerCard(positionTop, positionLeft, cardArr) {
+    dealerCard(positionTop, positionLeft) {
         let top = [...positionTop]
-        console.log(top)
-        //let value;
         let left = [...positionLeft]
-        TweenMax.staggerTo('.tile', 1, {
-            rotation: 360,
+        console.log(top)
+        gsap.to('.tile', {
+            rotation: 360,duration: 0.5,
             x: function (idx) {
                 for (idx; idx < top.length; idx++)
                     //let value = top[idx] - 100
-                    return 350- left[idx]
+                    return 350 - left[idx]
             },
             y: function (idy) {
                 for (idy; idy < left.length; idy++)
-                    return 250 - top[idy] ;
+                    return 250 - top[idy];
+            },stagger: 0.1, onComplete: function () {
             }
-        }, 0.1);
+        })
+    }
+
+    rotationCoin(){
+        var images = new Array()
+
+        setInterval("Animate()", 400);
+        var x = 0;
+
+        function Animate() {
+            document.getElementById("img").src = images[x]
+            x++;
+            if (images.length == x) {
+                x = 0;
+            }
+        }
     }
 }
