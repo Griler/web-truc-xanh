@@ -9,7 +9,7 @@ const img = ["./asset/Ahri.png", "./asset/Akali.png",
     "./asset/Kayn.png", "./asset/Lux.png", "./asset/Sona.png", "./asset/Viego.png", "./asset/Yasuo.png"];
 const imgPicklist = [...img, ...img];
 const tileCount = imgPicklist.length;
-let coins = 10000;
+let coins = 500;
 let revealedCount = 0;
 let activeTile = null;
 let awaitingEndOfMove = false;
@@ -104,23 +104,22 @@ function eventClickCard(element, color) {
     }
     awaitingEndOfMove = true;
     coins -= 500;
-    coinsElement.innerHTML = `coins: ${coins}`
-    console.log(coins)
     setTimeout(() => {
         element.style.background = "url(./imgCard.png)";
         element.style.backgroundSize = "cover";
         activeTile.style.background = "url(./imgCard.png)";
         activeTile.style.backgroundSize = "cover"
         awaitingEndOfMove = false;
+        coinsElement.innerHTML = `coins: ${coins}`
         activeTile = null;
         isAnimating = 0;
-        setTimeout(() => {
-            if (coins <= 0) {
-                alert("You lose! Refresh to start again.");
-                window.location.reload()
-            }
-        }, 1000);
     }, 1200);
+    setTimeout(() => {
+        if (coins <= 0) {
+            alert("You lose! Refresh to start again.");
+            window.location.reload()
+        }
+    }, 1500);
 }
 
 function resetButton() {
